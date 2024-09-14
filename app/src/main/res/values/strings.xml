@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Exercise Four - Traffic Light</string>
+    <string name="traffic_button">STOP</string>
 </resources>

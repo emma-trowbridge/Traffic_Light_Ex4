@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bignerdranch.android.traffic_light_ex4.databinding.ActivityMainBinding
@@ -40,7 +41,9 @@ class MainActivity : AppCompatActivity() {
         when (currentState) {
             TrafficLightState.STOP -> {
                 binding.trafficButton.text = "STOP"
-                binding.trafficButton.setBackgroundColor(Color.RED)
+                binding.trafficButton.setBackgroundColor(
+                    ContextCompat.getColor(this, R.color.red)
+                )
 
                 binding.trafficlightRed.visibility = View.VISIBLE
                 binding.trafficlightGreen.visibility = View.INVISIBLE
@@ -48,8 +51,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             TrafficLightState.GO -> {
-                binding.trafficButton.text = "WAIT"
-                binding.trafficButton.setBackgroundColor(Color.GREEN)
+                binding.trafficButton.text = "GO"
+                binding.trafficButton.setBackgroundColor(
+                    ContextCompat.getColor(this, R.color.green)
+                )
 
                 binding.trafficlightRed.visibility = View.INVISIBLE
                 binding.trafficlightGreen.visibility = View.VISIBLE
@@ -58,7 +63,9 @@ class MainActivity : AppCompatActivity() {
 
             TrafficLightState.WAIT -> {
                 binding.trafficButton.text = "WAIT"
-                binding.trafficButton.setBackgroundColor(Color.YELLOW)
+                binding.trafficButton.setBackgroundColor(
+                    ContextCompat.getColor(this, R.color.yellow)
+                )
 
                 binding.trafficlightRed.visibility = View.INVISIBLE
                 binding.trafficlightGreen.visibility = View.INVISIBLE
